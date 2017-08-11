@@ -14,7 +14,7 @@ A simple python class to scrap data from WhoScored by using Selenium.
 ## How to use
 A complete list of tournament id is available in WSTournamentList.py
 ```
-from WhoScored import WhoScoredScrapper
+from WhoScored import WhoScoredScraper
 
 ws = WhoScoredScrapper()
 idTournament = 0
