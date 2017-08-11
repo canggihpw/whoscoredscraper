@@ -7,11 +7,9 @@ A simple python class to scrap data from WhoScored by using Selenium.
 * Selenium (https://pypi.python.org/pypi/selenium)
 
 ## File descriptions
-* WhoScored.py
-A class file to be included
+* WhoScored.py. A class file to be included
 
-* WSTournamentList.py
-A list containing tournament's id, name, and url
+* WSTournamentList.py. A list containing tournament's id, name, and url
 
 ## How to use
 A complete list of tournament id is available in WSTournamentList.py
