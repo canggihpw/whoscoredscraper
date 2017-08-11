@@ -49,7 +49,7 @@ class WhoScoredScraper:
         
     def getCurrentTable(self,idTournament):
         curtable = []        
-        self.currURL = WSTournamentList.TournamentLists[idTournament][1]
+        self.currURL = WSTournamentList.TournamentLists[idTournament][2]
         self._openBrowser()
 
         html = self._browser.find_elements_by_css_selector("tbody#standings-15151-content>tr")
