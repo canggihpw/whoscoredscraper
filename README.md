@@ -18,8 +18,8 @@ from WhoScored import WhoScoredScrapper
 
 ws = WhoScoredScrapper()
 idTournament = 0
-print ws.getCurrentTable(idTournament)
-ws.quitBrowser()
+print ws.get_current_table(idTournament)
+ws.quit_browser()
 ```
 
 ## Current feature
@@ -30,3 +30,6 @@ ws.quitBrowser()
 * Player statistics
 * Past data
 * and many more features
+
+## License
+GNU Affero General Public License v3.0

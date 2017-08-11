@@ -16,7 +16,7 @@ import WSTournamentList
 class WhoScoredScraper:
     currURL = "https://www.whoscored.com/"
 
-    def _openBrowser(self):
+    def _open_browser(self):
         try:
             #Load driver
             self._browser = webdriver.Chrome()
@@ -30,12 +30,12 @@ class WhoScoredScraper:
             except Exception:
                 print Exception.message
                 self.quitBrowser()
-            
+
         except Exception:
             print Exception.message
             self.quitBrowser()
-        
-    def quitBrowser(self):
+
+    def quit_browser(self):
         self._browser.quit()
 
 #    def getTournamentList(self):
@@ -46,11 +46,11 @@ class WhoScoredScraper:
 #        for ht in html:
 #            self._tList.append([ht.text,ht.find_element_by_tag_name("a").get_attribute("href")])
 #        return self._tList
-        
-    def getCurrentTable(self,idTournament):
-        curtable = []        
+
+    def get_current_table(self,idTournament):
+        curtable = []
         self.currURL = WSTournamentList.TournamentLists[idTournament][2]
-        self._openBrowser()
+        self._open_browser()
 
         html = self._browser.find_elements_by_css_selector("tbody#standings-15151-content>tr")
         for rows in html:
