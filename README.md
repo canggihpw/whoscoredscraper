@@ -5,6 +5,7 @@ A simple python class to scrap data from WhoScored by using Selenium.
 ## Requirements
 * Python 2.7
 * Selenium (https://pypi.python.org/pypi/selenium)
+* Google Chrome (Other browsers will be added or it can be manually changed in WhoScored.py)
 
 ## File descriptions
 * WhoScored.py. A class file to be included
