@@ -1,8 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Aug 11 12:28:59 2017
-
-@author: canggih
+WhoScored.py
+A class for extracting WhoScored data
+---
+USAGE:
+# import the class
+from WhoScored import WhoScoredScraper
+# create instance
+ws = WhoScoredScrapper()
+---
 """
 
 from __future__ import division
@@ -16,13 +22,15 @@ import WSTournamentList
 class WhoScoredScraper:
     currURL = "https://www.whoscored.com/"
 
+    # Method to open the browser.
+    # Here I use Chrome, for other browsers can be seen in Selenium websites
     def _open_browser(self):
         try:
-            #Load driver
+            # Load driver
             self._browser = webdriver.Chrome()
-            #Load page
+            # Load page
             self._browser.get(self.currURL)
-            #Wait until certain element is visible
+            # Wait until certain element is visible
             try:
                 checkelem = WebDriverWait(self._browser,10).until(
                 EC.visibility_of_all_elements_located((By.CSS_SELECTOR,"div#footer-wslogo"))
@@ -35,6 +43,7 @@ class WhoScoredScraper:
             print Exception.message
             self.quitBrowser()
 
+    # Close Chrome application
     def quit_browser(self):
         self._browser.quit()
 
@@ -47,6 +56,8 @@ class WhoScoredScraper:
 #            self._tList.append([ht.text,ht.find_element_by_tag_name("a").get_attribute("href")])
 #        return self._tList
 
+    # Get the current standing by searching element
+    # URL of the tournament is extracted from WSTournamentList
     def get_current_table(self,idTournament):
         curtable = []
         self.currURL = WSTournamentList.TournamentLists[idTournament][2]
