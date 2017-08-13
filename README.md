@@ -5,21 +5,22 @@ A simple python class to scrap data from WhoScored by using Selenium.
 ## Requirements
 * Python 2.7
 * Selenium (https://pypi.python.org/pypi/selenium)
-* Google Chrome (Other browsers will be added or it can be manually changed in WhoScored.py)
+
 
 ## File descriptions
 * WhoScored.py. A class file to be included
 
 * WSTournamentList.py. A list containing tournament's id, name, and url
 
-## How to use
-A complete list of tournament id is available in WSTournamentList.py
+## Usage
+Some major browsers: 0 - Chrome, 1 - Firefox, 2 - Safari, 3 - Opera, 4 - Edge
+
+A complete list of <idTournament> is available in file WSTournamentList.py
 ```
 from WhoScored import WhoScoredScraper
 
-ws = WhoScoredScrapper()
-idTournament = 0
-print ws.get_current_table(idTournament)
+ws = WhoScoredScrapper(<browser used>)
+print ws.get_current_table(<idTournament>)
 ws.quit_browser()
 ```
 
