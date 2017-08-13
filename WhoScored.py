@@ -7,7 +7,13 @@ USAGE:
 # import the class
 from WhoScored import WhoScoredScraper
 # create instance
-ws = WhoScoredScrapper()
+ws = WhoScoredScrapper(<browsertype>)
+# browsertype:
+# 0 - Chrome
+# 1 - Firefox
+# 2 - Safari
+# 3 - Opera
+# 4 - Edge
 ---
 """
 
@@ -21,13 +27,29 @@ import WSTournamentList
 
 class WhoScoredScraper:
     currURL = "https://www.whoscored.com/"
-
+    
+    def __init__(self,browser):
+        try:        
+            # Load driver
+            if browser == 0:
+                self._browser = webdriver.Chrome()
+            elif browser == 1:
+                self._browser = webdriver.Firefox()
+            elif browser == 2:
+                self._browser = webdriver.Safari()
+            elif browser == 3:
+                self._browser = webdriver.Opera()
+            elif browser == 4:
+                self._browser = webdriver.Edge()
+            else:
+                self._browser = webdriver.Chrome()
+        except Exception:
+            print Exception.message
+    
     # Method to open the browser.
     # Here I use Chrome, for other browsers can be seen in Selenium websites
     def _open_browser(self):
         try:
-            # Load driver
-            self._browser = webdriver.Chrome()
             # Load page
             self._browser.get(self.currURL)
             # Wait until certain element is visible
