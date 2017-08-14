@@ -11,11 +11,11 @@ sys.setdefaultencoding('UTF8')
 
 
 # Get a list of standing of a tournament in particular season
-def get_standings(handler,tournamentID,season):
-    tList = _Common._extract_csv("PyWhoScored/url-data/seasons.csv")
+def get_standings(handler,nationID,tournamentID,season):
+    tList = _Common._extract_csv("PyWhoScored/url-data/allseasons.csv")
     for tL in tList:
-        if (tL[0] == tournamentID) and (tL[1] == season):
-            currURL = tL[2]
+        if (tL[0] == nationID) and (tL[1] == tournamentID) and (tL[2] == season):
+            currURL = tL[3]
 
     Browser.open_browser(handler,currURL)
  

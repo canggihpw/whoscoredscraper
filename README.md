@@ -15,9 +15,14 @@ Get handler of web browser. Browsers used : 0 - Chrome, 1 - Firefox, 2 - Safari,
 ```
 handler = Browser.get_handler(0)
 ```
-Using the handler, tournament data can be obtained. List of tournament id can be found in PyWhoScored/url-data/tournament.csv.
+Using the handler, tournament data can be obtained. List of nation and tournament id can be found in url-data directory.
 ```
-print Tournament.get_standings(handler,'1','2014/2015')
+# print Tournament.get_standings(handler,<nation ID>,<tournament ID>,<season>)
+```
+For example, Italian Serie B has nation ID = 1 and tournament ID = 3.
+```
+# Italian Serie B 2013/2014
+print Tournament.get_standings(handler,'1','3','2013/2014')
 ```
 Quit web browser after obtaining the data.
 ```
@@ -25,7 +30,7 @@ Browser.quit_browser(handler)
 ```
 
 ## Current feature
-* Retrieve the current standing of leagues
+* Retrieve the standing of leagues
 
 ## Features to be added
 * Match statistics
