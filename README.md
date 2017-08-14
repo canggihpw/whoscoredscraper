@@ -1,4 +1,4 @@
-# WhoScored Scraper
+# PyWhoScored - WhoScored Scraper
 
 Python modules to scrap data from WhoScored by using Selenium.
 
